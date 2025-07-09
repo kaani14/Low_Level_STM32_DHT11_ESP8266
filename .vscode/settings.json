@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.s": "cpp",
+        "compare": "cpp"
+    }
+}
