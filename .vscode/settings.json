@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.s": "cpp",
-        "compare": "cpp"
+        "compare": "cpp",
+        "cstdint": "cpp"
     }
 }

@@ -29,6 +29,7 @@ set(sources_SRCS ${sources_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/Startup/startup_stm32f767zitx.s
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/clock.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/timer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Devices/Src/dht11.cpp
 )
 
 # Include directories
@@ -37,12 +38,14 @@ set(include_c_DIRS ${include_c_DIRS}
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32f7xx/Include
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Include
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Include
+	${CMAKE_CURRENT_SOURCE_DIR}/Devices/Inc
 )
 set(include_cxx_DIRS ${include_cxx_DIRS}
     ${CMAKE_CURRENT_SOURCE_DIR}/Inc
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32f7xx/Include
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Include
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Include
+	${CMAKE_CURRENT_SOURCE_DIR}/Devices/Inc
 )
 set(include_asm_DIRS ${include_asm_DIRS}
     
