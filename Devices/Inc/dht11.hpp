@@ -23,8 +23,18 @@ class DHT11 {
         void receive();
         void processData();
 
+        uint8_t temperatureIntegral = 0;
+        uint8_t temperatureDecimal = 0;
+        uint8_t humidityIntegral = 0;
+        uint8_t humidityDecimal = 0;
+        uint8_t checkSum = 0;
+
     private:
         uint16_t filter = 0;
+        volatile uint16_t captureValue[100];
+        bool dhtReply[40];
+        volatile int edgeCount = 0;
+        bool readStart = false;
         DHT11Config config;
 };
 

@@ -34,6 +34,7 @@ class Timer {
         void setCounter(uint16_t counterValue);
         void setCompare(uint16_t compareValue);
         void generateUpdateEvent();
+        uint16_t readCaptureValue();
         void enableInterrupt();
         void ResetTimer();
         void configureInputChannel();

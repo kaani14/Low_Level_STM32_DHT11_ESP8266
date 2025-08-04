@@ -36,6 +36,9 @@ void Timer::generateUpdateEvent(){
     tim->EGR |= TIM_EGR_UG;
 }
 
+uint16_t Timer::readCaptureValue(){
+    return tim->CCR2;
+}
 void Timer::ResetTimer() {
     TIM4->CCER = 0;
     tim->SR = 0;
