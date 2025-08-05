@@ -1,12 +1,20 @@
 #include "dht11.hpp"
 #include "timer.hpp"
+#include "gpio.hpp"
+#include "clock.hpp"
 
 Timer timer4(TIM4);
+GPIO gpioB(GPIOB);
 
 DHT11::DHT11(const DHT11Config& config)
     : config(config) {}
 
 DHT11::~DHT11() {}
+
+void DHT11::initGPIO() {
+	gpioB.setMode(config.pin, GPIO::GPIOMode::ALTERNATE);
+	gpioB.setAlternateFunction(config.pin, GPIO::GPIOAlternateFunction::AF2);
+}
 
 void DHT11::initTransmit() {
     timer4.enable();
@@ -25,6 +33,7 @@ void DHT11::transmit() {
 }
 
 void DHT11::initReceive() {
+	gpioB.setPullUpDown(config.pin, GPIO::GPIOPullUpDown::PULL_UP);
 	timer4.disable();
 	timer4.ResetTimer();
 	timer4.setPrescaler(config.inputCapturePrescaler);

@@ -32,6 +32,20 @@ void Timer::enableInterrupt(){
     tim->DIER |= TIM_DIER_CC2IE;
 }
 
+void Timer::clearCC2InterruptFlag(){
+    if (tim->SR & TIM_SR_CC2IF){
+        tim->SR &= ~TIM_SR_CC2IF;
+    }
+}
+
+void Timer::waitforUpdateInterrupt(){
+    while (!(tim->SR & TIM_SR_UIF)) {}
+}
+
+void Timer::clearUpdateInterruptFlag(){
+    tim->SR &= ~TIM_SR_UIF;
+}
+
 void Timer::generateUpdateEvent(){
     tim->EGR |= TIM_EGR_UG;
 }
@@ -107,4 +121,8 @@ void Timer::inputCaptureEdgeDetection(Timer::InputCaptureEdgeDetection edge) {
 
 void Timer::startCounter(){
     tim->CR1 |= TIM_CR1_CEN;
+}
+
+void Timer::basicCounterMode() {
+    tim->CR1 |= TIM_CR1_URS | TIM_CR1_ARPE;
 }

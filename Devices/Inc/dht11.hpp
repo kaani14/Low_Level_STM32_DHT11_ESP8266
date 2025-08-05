@@ -10,6 +10,7 @@ struct DHT11Config {
     uint8_t filter = 8;
     uint16_t inputCapturePrescaler = 0;
     uint16_t alternateEdgeDetection = 0;
+    uint16_t pin = 7;
 };
 
 class DHT11 {
@@ -17,6 +18,7 @@ class DHT11 {
     public:
         explicit DHT11(const DHT11Config& config = DHT11Config());
         ~DHT11();
+        void initGPIO();
         void initTransmit();
         void transmit();
         void initReceive();

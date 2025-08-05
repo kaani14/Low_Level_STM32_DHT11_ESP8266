@@ -28,8 +28,11 @@ set(sources_SRCS ${sources_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/Src/sysmem.c
 	${CMAKE_CURRENT_SOURCE_DIR}/Startup/startup_stm32f767zitx.s
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/clock.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/initClock.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/timer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Devices/Src/dht11.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/delay.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/gpio.cpp
 )
 
 # Include directories
