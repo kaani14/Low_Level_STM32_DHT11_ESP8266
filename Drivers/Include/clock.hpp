@@ -5,4 +5,5 @@
 
 void enableGPIOClock(GPIO_TypeDef* GPIOx);
 void enableTimerClock(TIM_TypeDef* TIMx);
+void enableUARTClock(USART_TypeDef* USARTx);
 #endif // CLOCK_HPP

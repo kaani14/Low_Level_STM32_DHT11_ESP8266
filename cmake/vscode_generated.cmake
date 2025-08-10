@@ -31,8 +31,10 @@ set(sources_SRCS ${sources_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/initClock.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/timer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Devices/Src/dht11.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Devices/Src/esp8266.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/delay.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/gpio.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/uart.cpp
 )
 
 # Include directories

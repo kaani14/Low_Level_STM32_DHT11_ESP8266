@@ -37,11 +37,19 @@ class GPIO {
             AF15 = 0xFU
         };
 
+        enum GPIOSpeed : uint32_t {
+            LOW = 0x0U,
+            MEDIUM = 0x1U,
+            HIGH = 0x2U,
+            VERY_HIGH = 0x3U
+        };
+
         GPIO(GPIO_TypeDef* gpioPort);
         ~GPIO();
         void setMode(uint16_t pin, GPIOMode mode);
         void setAlternateFunction(uint16_t pin, GPIOAlternateFunction alternateFunction);
         void setPullUpDown(uint16_t pin, GPIOPullUpDown pullUpDown);
+        void setSpeed(uint16_t pin, GPIOSpeed speed);
     private:
         GPIO_TypeDef* gpio;
 };

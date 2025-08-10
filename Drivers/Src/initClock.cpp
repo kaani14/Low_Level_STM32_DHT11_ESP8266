@@ -2,7 +2,12 @@
 #include "clock.hpp"
 
 void initClocks(void) {
+    enableGPIOClock(GPIOA);
     enableGPIOClock(GPIOB);
-    enableTimerClock(TIM4);
+    enableGPIOClock(GPIOC);
+
     enableTimerClock(TIM3);
+    enableTimerClock(TIM4);
+
+    enableUARTClock(UART4);
 }

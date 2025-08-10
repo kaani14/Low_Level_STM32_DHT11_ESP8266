@@ -5,6 +5,8 @@ void enableGPIOClock(GPIO_TypeDef* GPIOx) {
         RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     else if (GPIOx == GPIOB)
         RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+    else if (GPIOx == GPIOC)
+        RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 }
 
 void enableTimerClock(TIM_TypeDef* TIMx){
@@ -18,4 +20,9 @@ void enableTimerClock(TIM_TypeDef* TIMx){
         RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
     else if (TIMx == TIM5)
         RCC->APB1ENR |= RCC_APB1ENR_TIM5EN;
+}
+
+void enableUARTClock(USART_TypeDef* USARTx) {
+    if (USARTx == UART4)
+        RCC->APB1ENR |= RCC_APB1ENR_UART4EN;
 }
