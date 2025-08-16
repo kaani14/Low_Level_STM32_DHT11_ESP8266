@@ -10,26 +10,26 @@
 #include "delay.hpp"
 #include "gpio.hpp"
 #include "esp8266.hpp"
+#include "uart.hpp"
 // PB7 - as timer 4, Ch2
 
 extern Timer timer4;
 volatile int timer4InterruptCounter = 0;
 void delay(int k);
-void uart_transmit(const char *string);
-
 
 DHT11Config cfg = {};
 DHT11 dht11;
 
 std::string SSID = "SSID";
-std::string password = "password";
+std::string password = "Password";
 std::string IP = "\"184.106.153.149\"";
-std::string write_API_key = "\"API_KEY\"";
+std::string write_API_key = "key";
 
 const int port = 80;
 int sensor_output = 30.56;
 
 esp8266 ESP;
+extern UART uart4;
 
 int main (void)
 {
@@ -37,14 +37,8 @@ int main (void)
 	initDelayTimer();
 
 	ESP.initGPIO();
+	ESP.initUART();
 	GPIOB->MODER |= GPIO_MODER_MODER0_0 | GPIO_MODER_MODER14_0;
-
-	// UART
-	UART4->BRR = 0x8A;				//Baud Rate: 16Mhz / 115200
-	UART4->CR1 |= USART_CR1_UE | USART_CR1_TE;
-	UART4->CR1 |= USART_CR1_RE | USART_CR1_RXNEIE;
-	NVIC_SetPriority(UART4_IRQn, 0);
-	NVIC_EnableIRQ(UART4_IRQn);
 
 	//dht11.initGPIO();
 	delay(5000);
@@ -78,6 +72,5 @@ extern "C" void TIM4_IRQHandler(){
 // interrupt for receiving
 extern "C" void UART4_IRQHandler()
 {
-	ESP.rx_data[ESP.bufferCounter] = UART4->RDR;
-	ESP.bufferCounter++;
+    ESP.ESP8266_Read();
 }
