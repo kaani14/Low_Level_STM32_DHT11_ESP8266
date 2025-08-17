@@ -87,7 +87,7 @@ void esp8266::ESP8266_WiFiSetup(std::string SSID, std::string password) {
 }
 
 //HTTP request
-void esp8266::TS_Write(std::string IP, int port, std::string channel_write_key, int sensor_output) {
+void esp8266::TS_Write(std::string IP, int port, std::string channel_write_key, float sensor_output) {
     std::string cmd = "AT+CIPSTART=\"TCP\"," + IP + "," + std::to_string(port) + "\r\n";
     uart4.transmit(cmd.c_str());
     delay(1000);

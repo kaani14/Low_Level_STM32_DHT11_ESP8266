@@ -26,6 +26,7 @@ set(sources_SRCS ${sources_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/Src/main.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Src/syscall.c
 	${CMAKE_CURRENT_SOURCE_DIR}/Src/sysmem.c
+	${CMAKE_CURRENT_SOURCE_DIR}/Src/initSystem.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Startup/startup_stm32f767zitx.s
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/clock.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/initClock.cpp
@@ -35,6 +36,7 @@ set(sources_SRCS ${sources_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/delay.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/gpio.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/uart.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Src/interrupts.cpp
 )
 
 # Include directories

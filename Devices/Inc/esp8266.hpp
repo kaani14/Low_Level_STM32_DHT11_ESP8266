@@ -16,7 +16,7 @@ class esp8266{
 		void ESP8266_Test(void);
 		void ESP8266_Connection_Type(void);
 		void ESP8266_WiFiSetup(std::string SSID, std::string password);
-		void TS_Write(std::string IP, int port, std::string channel_write_key, int sensor_output);
+		void TS_Write(std::string IP, int port, std::string channel_write_key, float sensor_output);
 	
 	//private:
 		uint8_t rxPin;
