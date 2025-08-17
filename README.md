@@ -1,6 +1,8 @@
 # Description
 
-Sends Humidity data from DHT11 using HTTP request to Thingspeak using ESP8266 and STM32F767ZI. The project has low-level programming, and libraries have been created for each peripheral used in the project.
+This project reads humidity data from a DHT11 sensor and sends it to ThingSpeak using HTTP requests. The system is built on an STM32F767ZI microcontroller with an ESP8266 Wi-Fi module.
+
+The firmware is written in low-level C, and custom libraries were developed for each peripheral used in the project.
 
 # Connections
 
