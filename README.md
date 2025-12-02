@@ -4,6 +4,13 @@ This project reads humidity data from a DHT11 sensor and sends it to ThingSpeak 
 
 The firmware is written in low-level C, and custom libraries were developed for each peripheral used in the project.
 
+
+# File Structure
+
+Drivers: Device Drivers and MCU Peripherals
+Devices: Sensor and ESP Interfacing
+Src: Main.cpp
+
 # Connections
 
 **STM32F767ZI**  | **ESP-8266**
