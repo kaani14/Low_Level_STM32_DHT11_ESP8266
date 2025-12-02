@@ -8,7 +8,9 @@ The firmware is written in low-level C, and custom libraries were developed for 
 # File Structure
 
 Drivers: Device Drivers and MCU Peripherals
+
 Devices: Sensor and ESP Interfacing
+
 Src: Main.cpp
 
 # Connections
